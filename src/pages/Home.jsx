@@ -1,5 +1,5 @@
 import LogoImage from "../assets/Images/Home.png"
-import background from "../assets/Images/Background.jpg"
+import background from "../assets/Images/background.jpg"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useEffect, useState } from "react"
@@ -52,7 +52,7 @@ export default function Home() {
   }, [scrollY])
   return (
     <>
-      <Box height="100vh" sx={{ position: "relative", overflowX: "hidden" }}>
+      <Box height="100vh" sx={{ position: "relative" }}>
         <img
           src={background}
           alt="IEE Members Image"
