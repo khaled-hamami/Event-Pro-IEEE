@@ -20,6 +20,7 @@ function App() {
           backgroundColor: "background.default",
           backgroundImage: darkMode ? darkBgStyle : lightBgStyle,
           color: "primary.main",
+          overflow: "hidden",
         }}
       >
         <Router>

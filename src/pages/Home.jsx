@@ -5,17 +5,15 @@ import { useInView } from "react-intersection-observer"
 import { useEffect, useState } from "react"
 import { Box, Container, Typography } from "@mui/material"
 import "../styles/index.css"
+import { useTheme } from "@emotion/react"
+import { useNavigate } from "react-router"
 
 export default function Home() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  })
-
-  const animationVariants = {
-    hidden: { opacity: 0, translateX: -200 },
-    visible: { opacity: 1, translateX: 0 },
-  }
-
+  const theme = useTheme()
+  const navigate = useNavigate()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const [imageHeight, setImageHeight] = useState(windowWidth < 600 ? "50vh" : "75vh")
   useEffect(() => {
@@ -30,6 +28,7 @@ export default function Home() {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
+
   const [scrollY, setScrollY] = useState(0)
   const [bgPosition, setBgPosition] = useState(0)
   const [logoPosition, setLogoPosition] = useState(0)
@@ -52,7 +51,9 @@ export default function Home() {
   }, [scrollY])
   return (
     <>
-      <Box height="100vh" sx={{ position: "relative" }}>
+      {/* /****************************************************** SECTION 1 ******************************************************** */}
+
+      <Box height="55vh" sx={{ position: "relative" }}>
         <img
           src={background}
           alt="IEE Members Image"
@@ -62,20 +63,20 @@ export default function Home() {
             filter: "blur(3px)",
             userSelect: "none",
             position: "absolute",
+            overflowX: "hidden",
             WebkitMaskImage: "linear-gradient(to Top, transparent 0%, black 100%)",
             transform: "translateY(-50%)",
             top: bgPosition + "px",
           }}
         />
         <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, translateY: "-200" }}
+          animate={{ opacity: 1, translateY: "0" }}
           transition={{ duration: 1 }}
           src={LogoImage}
           alt="IEE Image"
           style={{
             width: "clamp(300px,100%,750px)",
-            filter: "blur(0px)",
             userSelect: "none",
             margin: " 100px auto",
             display: "block",
@@ -83,7 +84,8 @@ export default function Home() {
             zIndex: 1,
             top: logoPosition + "px",
             left: "50%",
-            transform: "translateX(-50%)",
+            translateX: "-50%",
+            filter: theme.palette.mode == "dark" ? "brightness(1.5)" : "",
           }}
         />
         <Container
@@ -99,6 +101,7 @@ export default function Home() {
           }}
         >
           <Typography
+            component="div"
             textAlign="center"
             variant="h3"
             fontWeight="bold"
@@ -109,7 +112,9 @@ export default function Home() {
             }}
           >
             <motion.div
-              style={{ fontSize: "inherit" }}
+              style={{
+                fontSize: "inherit",
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
@@ -119,38 +124,60 @@ export default function Home() {
           </Typography>
         </Container>
       </Box>
-      <Container sx={{ marginTop: "-400px" }}>
+
+      {/* /****************************************************** SECTION 2 ******************************************************** */}
+
+      <Container sx={{}}>
         <br />
         <br />
         <Typography
+          component="div"
           sx={{
-            fontSize: { xs: ".9rem", sm: "1rem", md: "1.3rem", lg: "1.3rem" },
+            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
+            letterSpacing: "-0.8px",
             fontWeight: "bold",
           }}
         >
-          <AnimatedTextBlock>💡 What We Offer:</AnimatedTextBlock>
+          <AnimatedTextBlock animationside="right">💡 What We Offer:</AnimatedTextBlock>
         </Typography>
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
-            Knowledge Sharing: Dive into a pool of collective wisdom through workshops, seminars,
-            and knowledge-sharing sessions. Projects and Innovation: Get hands-on experience with
-            cutting-edge projects and explore your creativity in the realm of technology. Networking
-            Opportunities: Connect with like-minded individuals, industry professionals, and experts
-            in the field.
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
+          }}
+        >
+          <AnimatedTextBlock animationside="right">
+            Discover a seamless event experience with our platform, where you can easily register
+            for upcoming events, access event dates, fees and locations ... all in one place,
+            ensuring a hassle-free and organized event participation.
           </AnimatedTextBlock>
         </Typography>
         <br />
         <br />
         <Typography
+          component="div"
           sx={{
-            fontSize: { xs: ".9rem", sm: "1rem", md: "1.3rem", lg: "1.3rem" },
+            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
+            letterSpacing: "-0.8px",
             fontWeight: "bold",
+            cursor: "pointer",
+            "&:hover": { scale: "1.01", textDecoration: "underline" },
+          }}
+          onClick={() => navigate("/events")}
+        >
+          <AnimatedTextBlock animationside="left">📅 Event Management Site:</AnimatedTextBlock>
+        </Typography>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
           }}
         >
-          <AnimatedTextBlock>📅 Event Management Site:</AnimatedTextBlock>
-        </Typography>
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
+          <AnimatedTextBlock animationside="left">
             Explore our Event Management Site, your gateway to a world of exciting happenings and
             opportunities. Here, you'll find:
           </AnimatedTextBlock>
@@ -158,15 +185,27 @@ export default function Home() {
         <br />
         <br />
         <Typography
+          component="div"
           sx={{
-            fontSize: { xs: ".9rem", sm: "1rem", md: "1.3rem", lg: "1.3rem" },
+            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
+            letterSpacing: "-0.8px",
             fontWeight: "bold",
+            cursor: "pointer",
+            "&:hover": { scale: "1.01", textDecoration: "underline" },
+          }}
+          onClick={() => navigate("/events")}
+        >
+          <AnimatedTextBlock animationside="right"> 🎉 Upcoming Events:</AnimatedTextBlock>
+        </Typography>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
           }}
         >
-          <AnimatedTextBlock>🎉 Upcoming Events:</AnimatedTextBlock>
-        </Typography>
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
+          <AnimatedTextBlock animationside="right">
             Stay in the loop with our calendar of events, ranging from technical talks to hackathons
             and social gatherings.
           </AnimatedTextBlock>
@@ -174,15 +213,27 @@ export default function Home() {
         <br />
         <br />
         <Typography
+          component="div"
           sx={{
-            fontSize: { xs: ".9rem", sm: "1rem", md: "1.3rem", lg: "1.3rem" },
+            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
+            letterSpacing: "-0.8px",
             fontWeight: "bold",
+            cursor: "pointer",
+            "&:hover": { scale: "1.01", textDecoration: "underline" },
+          }}
+          onClick={() => navigate("/events")}
+        >
+          <AnimatedTextBlock animationside="left">🔗 Registration Hub:</AnimatedTextBlock>
+        </Typography>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
           }}
         >
-          <AnimatedTextBlock>🔗 Registration Hub:</AnimatedTextBlock>
-        </Typography>
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
+          <AnimatedTextBlock animationside="left">
             Easily register for events, workshops, and activities to make sure you never miss out on
             an enriching experience.
           </AnimatedTextBlock>
@@ -190,15 +241,27 @@ export default function Home() {
         <br />
         <br />
         <Typography
+          component="div"
           sx={{
-            fontSize: { xs: ".9rem", sm: "1rem", md: "1.3rem", lg: "1.3rem" },
+            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
+            letterSpacing: "-0.8px",
             fontWeight: "bold",
+            cursor: "pointer",
+            "&:hover": { scale: "1.01", textDecoration: "underline" },
+          }}
+          onClick={() => navigate("/events")}
+        >
+          <AnimatedTextBlock animationside="right">📚 Resource Center:</AnimatedTextBlock>
+        </Typography>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
           }}
         >
-          <AnimatedTextBlock>📚 Resource Center:</AnimatedTextBlock>
-        </Typography>
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
+          <AnimatedTextBlock animationside="right">
             Access resources, materials, and documentation related to past events, ensuring you have
             a wealth of knowledge at your fingertips.
           </AnimatedTextBlock>
@@ -206,16 +269,32 @@ export default function Home() {
         <br />
         <br />
 
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
+          }}
+        >
+          <AnimatedTextBlock animationside="left">
             Embark on a journey of discovery, collaboration, and innovation with IEEE ISET Nabeul.
             We're excited to have you on board!
           </AnimatedTextBlock>
         </Typography>
         <br />
         <br />
-        <Typography sx={{ fontSize: { lg: ".95rem" }, m: "14px", pl: "10px" }}>
-          <AnimatedTextBlock>#Explore Now #Join Us #Learn More</AnimatedTextBlock>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: { lg: "1.1rem" },
+            m: "14px",
+            pl: "10px",
+          }}
+        >
+          <AnimatedTextBlock animationside="right">
+            #Explore Now #Join Us #Learn More
+          </AnimatedTextBlock>
         </Typography>
         <br />
         <br />
@@ -223,13 +302,13 @@ export default function Home() {
     </>
   )
 }
-function AnimatedTextBlock({ children }) {
+function AnimatedTextBlock({ children, animationside }) {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
   })
 
   const animationVariants = {
-    hidden: { opacity: 0, translateX: -200 },
+    hidden: { opacity: 0, translateX: animationside == "right" ? 300 : -300 },
     visible: { opacity: 1, translateX: 0 },
   }
 

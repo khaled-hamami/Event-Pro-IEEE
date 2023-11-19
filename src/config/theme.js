@@ -13,8 +13,8 @@ export const lightTheme = createTheme({
       main: "#6c3890",
     },
     contrast: {
-      main: "#fff",
-      reverse: "#000",
+      main: "#f8f8f8",
+      reverse: "#333",
     },
   },
 })
@@ -26,14 +26,14 @@ export const darkTheme = createTheme({
       default: "hsla(0,0%,0%,1)",
     },
     primary: {
-      main: "#00609C",
+      main: "#0996f6",
     },
     secondary: {
       main: "#b55ef1",
     },
     contrast: {
-      main: "#000",
-      reverse: "#fff",
+      main: "#333",
+      reverse: "#f8f8f8",
     },
   },
 })

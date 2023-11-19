@@ -6,15 +6,20 @@ import fourthImage from "../assets/Images/4.jpg"
 import { motion } from "framer-motion"
 import { Box } from "@mui/material"
 import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
 
 export default function Events() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [ref, outerComponentInView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
   })
 
   const AnimatedEventBlock = ({ children, index }) => {
     const [innerRef, inView] = useInView({
-      triggerOnce: true,
+      triggerOnce: false,
     })
 
     const animationVariants = {
@@ -159,7 +164,7 @@ export default function Events() {
             <motion.div
               initial={{ opacity: 0, translateX: i % 2 === 0 ? -300 : 300 }}
               animate={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 1, delay: i * 0.2 }}
+              transition={{ duration: 0.7, delay: i * 0.2 }}
             >
               <Event event={e} />
             </motion.div>

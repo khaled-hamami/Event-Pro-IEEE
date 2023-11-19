@@ -115,7 +115,7 @@ export default function Event({ event }) {
             component="span"
             sx={{
               color: "contrast.reverse",
-              fontSize: { xs: ".7rem", sm: ".8rem" },
+              fontSize: { xs: ".7rem", sm: ".95rem" },
               textShadow: "none !important",
               mr: "10px",
             }}
@@ -128,7 +128,7 @@ export default function Event({ event }) {
           </Typography>
           <Typography
             component="span"
-            sx={{ color: "#666", fontSize: { xs: ".8rem" }, textShadow: "none !important" }}
+            sx={{ color: "#666", fontSize: { xs: ".95rem" }, textShadow: "none !important" }}
           >
             |
           </Typography>
@@ -138,7 +138,7 @@ export default function Event({ event }) {
             component="span"
             sx={{
               color: "contrast.reverse",
-              fontSize: { xs: ".7rem", sm: ".8rem" },
+              fontSize: { xs: ".7rem", sm: ".95rem" },
               textShadow: "none !important",
               ml: "10px",
             }}
@@ -147,7 +147,7 @@ export default function Event({ event }) {
           </Typography>
           <Typography
             component="span"
-            sx={{ color: "#666", fontSize: { xs: ".8rem" }, textShadow: "none !important" }}
+            sx={{ color: "#666", fontSize: { xs: ".95rem" }, textShadow: "none !important" }}
           >
             |
           </Typography>
@@ -156,7 +156,7 @@ export default function Event({ event }) {
             component="span"
             sx={{
               color: "contrast.reverse",
-              fontSize: { xs: ".7rem", sm: ".8rem" },
+              fontSize: { xs: ".7rem", sm: ".95rem" },
               textShadow: "none !important",
             }}
           >
