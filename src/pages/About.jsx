@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 
 export default function About() {
   return (
-    <>
+    <Box sx={{ mt: "100px" }}>
       <Typography>Welcome to IEEE ISET Nabeul!</Typography>
       <br />
       <Typography>
@@ -12,6 +12,6 @@ export default function About() {
         engineering.
       </Typography>
       <br />
-    </>
+    </Box>
   )
 }

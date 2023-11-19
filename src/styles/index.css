@@ -49,3 +49,6 @@ html body {
   background-attachment: fixed;
   min-height: 100svh;
 }
+.hidden {
+  display: none;
+}

@@ -143,6 +143,7 @@ export default function Home() {
         <Typography
           component="div"
           sx={{
+            color: "contrast.reverse",
             fontSize: { lg: "1.1rem" },
             m: "14px",
             pl: "10px",
@@ -174,6 +175,7 @@ export default function Home() {
           sx={{
             fontSize: { lg: "1.1rem" },
             m: "14px",
+            color: "contrast.reverse",
             pl: "10px",
           }}
         >
@@ -184,34 +186,7 @@ export default function Home() {
         </Typography>
         <br />
         <br />
-        <Typography
-          component="div"
-          sx={{
-            fontSize: { xs: "1.2rem", sm: "1rem", md: "1.3rem", lg: "1.7rem" },
-            letterSpacing: "-0.8px",
-            fontWeight: "bold",
-            cursor: "pointer",
-            "&:hover": { scale: "1.01", textDecoration: "underline" },
-          }}
-          onClick={() => navigate("/events")}
-        >
-          <AnimatedTextBlock animationside="right"> 🎉 Upcoming Events:</AnimatedTextBlock>
-        </Typography>
-        <Typography
-          component="div"
-          sx={{
-            fontSize: { lg: "1.1rem" },
-            m: "14px",
-            pl: "10px",
-          }}
-        >
-          <AnimatedTextBlock animationside="right">
-            Stay in the loop with our calendar of events, ranging from technical talks to hackathons
-            and social gatherings.
-          </AnimatedTextBlock>
-        </Typography>
-        <br />
-        <br />
+
         <Typography
           component="div"
           sx={{
@@ -230,6 +205,7 @@ export default function Home() {
           sx={{
             fontSize: { lg: "1.1rem" },
             m: "14px",
+            color: "contrast.reverse",
             pl: "10px",
           }}
         >
@@ -258,6 +234,7 @@ export default function Home() {
           sx={{
             fontSize: { lg: "1.1rem" },
             m: "14px",
+            color: "contrast.reverse",
             pl: "10px",
           }}
         >

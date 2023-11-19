@@ -3,6 +3,8 @@ import firstImage from "../assets/Images/1.jpg"
 import secondImage from "../assets/Images/2.jpg"
 import thirdImage from "../assets/Images/3.jpg"
 import fourthImage from "../assets/Images/4.jpg"
+import fithImage from "../assets/Images/5.jpg"
+import sixthImage from "../assets/Images/6.jpg"
 import { motion } from "framer-motion"
 import { Box } from "@mui/material"
 import { useInView } from "react-intersection-observer"
@@ -48,7 +50,7 @@ export default function Events() {
       title: "inegration day",
       description: "this is the first thing we do each year to get to know each other",
       trainers: ["khaled", "mohamed", "amin"],
-      image: fourthImage,
+      image: firstImage,
       date: new Date(Date.now()),
       time: { startHour: "7:00", endHour: "10:30" },
       location: "mrezgua",
@@ -65,7 +67,7 @@ export default function Events() {
       title: "tasks management",
       description: " we must give each one his/her task",
       trainers: ["ahmed", "ali"],
-      image: thirdImage,
+      image: secondImage,
       date: new Date(Date.now()),
       time: { startHour: "14:00", endHour: "18:00" },
       location: "nabeul",
@@ -82,7 +84,7 @@ export default function Events() {
       title: "Renuion",
       description: "gather up to discust some things",
       trainers: ["houssem", "sahar"],
-      image: secondImage,
+      image: thirdImage,
       date: new Date(Date.now()),
       time: { startHour: "14:00", endHour: "18:00" },
       location: "nabeul",
@@ -99,10 +101,10 @@ export default function Events() {
       title: "formation",
       description: "we have a formation about react",
       trainers: ["asma"],
-      image: firstImage,
+      image: fourthImage,
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
-      location: "hammamet",
+      location: "iset",
       price: "15",
       open: "internal",
       likes: [4, 7, 8, 9, 5, 58, 96, 785, 415, 78, 522, 14, 89],
@@ -113,14 +115,14 @@ export default function Events() {
     {
       id: 35879852579,
       name: "thirdImage",
-      title: "formation",
+      title: "recruitment",
       description: "we have a formation about react",
       trainers: ["asma"],
-      image: firstImage,
+      image: fithImage,
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
-      location: "hammamet",
-      price: "15",
+      location: "library",
+      price: "free",
       open: "internal",
       likes: [4, 7, 8, 9, 5, 58, 96, 785, 415, 78, 522, 14, 89],
       registered: [5, 78, 8, 96],
@@ -130,14 +132,14 @@ export default function Events() {
     {
       id: 21345312579,
       name: "thirdImage",
-      title: "formation",
+      title: "discussion",
       description: "we have a formation about react",
-      trainers: ["asma"],
-      image: firstImage,
+      trainers: ["naser", "amel"],
+      image: sixthImage,
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
-      location: "hammamet",
-      price: "15",
+      location: "caffé",
+      price: "5",
       open: "internal",
       likes: [4, 7, 8, 9, 5, 58, 96, 785, 415, 78, 522, 14, 89],
       registered: [5, 78, 8, 96],
@@ -157,6 +159,7 @@ export default function Events() {
           alignItems: "center",
           flexWrap: "wrap",
           overflowX: "hidden",
+          mt: "100px",
         }}
       >
         {event.map((e, i) => (

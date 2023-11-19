@@ -10,6 +10,7 @@ import Events from "./pages/Events"
 import About from "./pages/About"
 import Admin from "./pages/Admin"
 import Error from "./pages/Error"
+import Login from "./pages/Login"
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   return (
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/events" Component={Events} />
+            <Route path="/login" Component={Login} />
             <Route path="/admin" Component={Admin} />
             <Route path="/about" Component={About} />
             <Route path="/*" Component={<Error />} />
