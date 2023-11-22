@@ -30,8 +30,8 @@ function App() {
             <Route path="/" Component={Home} />
             <Route path="/events" Component={Events} />
             <Route path="/login" Component={Login} />
-            <Route path="/admin" Component={Admin} />
             <Route path="/about" Component={About} />
+            <Route path="/admin" Component={Admin} />
             <Route path="/*" Component={<Error />} />
           </Routes>
         </Router>

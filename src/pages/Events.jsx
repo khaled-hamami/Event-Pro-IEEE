@@ -6,10 +6,10 @@ import fourthImage from "../assets/Images/4.jpg"
 import fithImage from "../assets/Images/5.jpg"
 import sixthImage from "../assets/Images/6.jpg"
 import { motion } from "framer-motion"
-import { Box } from "@mui/material"
+import { Box, Fab, Popover } from "@mui/material"
 import { useInView } from "react-intersection-observer"
-import { useEffect } from "react"
-
+import { useEffect, useState } from "react"
+import AddIcon from "@mui/icons-material/Add"
 export default function Events() {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -29,6 +29,8 @@ export default function Events() {
       visible: { opacity: 1, translateX: 0 },
     }
 
+    // const open = Boolean(anchorEl)
+    // const id = open ? "simple-popover" : undefined
     return (
       <motion.div
         ref={innerRef}
@@ -174,6 +176,32 @@ export default function Events() {
           </AnimatedEventBlock>
         ))}
       </Box>
+      {/* <Box on sx={{ "& > :not(style)": { m: 5 }, position: "fixed", bottom: 0, right: 0 }}>
+        <Fab color="primary" aria-label="add">
+          <AddIcon />
+        </Fab>
+        <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          >
+          <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+        </Popover> */}
+      {/* </Box> */}
     </>
   )
+}
+
+const handleClick = (event) => {
+  setAnchorEl(event.currentTarget)
+}
+
+const handleClose = () => {
+  setAnchorEl(null)
+  const [anchorEl, setAnchorEl] = useState(null)
 }

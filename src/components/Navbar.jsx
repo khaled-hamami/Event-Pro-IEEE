@@ -67,9 +67,6 @@ export default function Navbar({ setTheme }) {
       <CustomNavLink style={{ fontSize: "1rem" }} to="/login">
         LOGIN
       </CustomNavLink>
-      <CustomNavLink style={{ fontSize: "1rem" }} to="/admin">
-        ADMIN
-      </CustomNavLink>
       <CustomNavLink style={{ fontSize: "1rem" }} to="/about">
         ABOUT
       </CustomNavLink>
