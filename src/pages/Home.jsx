@@ -15,11 +15,11 @@ export default function Home() {
     window.scrollTo(0, 0)
   }, [])
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const [imageHeight, setImageHeight] = useState(windowWidth < 600 ? "50vh" : "75vh")
+  const [imageHeight, setImageHeight] = useState(windowWidth < 600 ? "50svh" : "75svh")
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
-      setImageHeight(window.innerWidth < 600 ? "50vh" : "75vh")
+      setImageHeight(window.innerWidth < 600 ? "50svh" : "75svh")
     }
 
     window.addEventListener("resize", handleResize)
@@ -53,7 +53,7 @@ export default function Home() {
     <>
       {/* /****************************************************** SECTION 1 ******************************************************** */}
 
-      <Box height="55vh" sx={{ position: "relative" }}>
+      <Box height="55svh" sx={{ position: "relative" }}>
         <img
           src={background}
           alt="IEE Members Image"
@@ -95,7 +95,7 @@ export default function Home() {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            marginTop: { xs: "25vh", sm: "35vh" },
+            marginTop: { xs: "25svh", sm: "35svh" },
             position: "relative",
             zIndex: 2,
           }}

@@ -41,7 +41,7 @@ export default function Login() {
         <form
           className="iiiiiiiiiiiiiiiiiiiii"
           style={{
-            height: window.innerWidth > 600 ? "85vh" : window.innerWidth > 400 ? "80vh" : "50vh",
+            height: window.innerWidth > 600 ? "calc(520px + 20svh)" : "calc(450px + 15svh)",
             width: "100%",
             display: "flex",
             justifyContent: "center",

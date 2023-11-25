@@ -176,7 +176,14 @@ export default function Events() {
           </AnimatedEventBlock>
         ))}
       </Box>
-      <Box sx={{ "& > :not(style)": { m: 5 }, position: "fixed", bottom: 0, right: 0 }}>
+      <Box
+        sx={{
+          "& > :not(style)": { m: { xs: 10, sm: 7, md: 5 } },
+          position: "fixed",
+          bottom: 0,
+          right: 0,
+        }}
+      >
         <Fab
           id="addIconButton"
           aria-haspopup="true"
