@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { useState } from "react"
 import { ThemeProvider } from "@emotion/react"
 import { darkTheme, lightTheme } from "./config/theme"
@@ -11,6 +11,7 @@ import About from "./pages/About"
 import Admin from "./pages/Admin"
 import Error from "./pages/Error"
 import Login from "./pages/Login"
+import BottomNavigation from "./components/MobileNav"
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/admin" Component={Admin} />
             <Route path="/*" Component={<Error />} />
           </Routes>
+          <BottomNavigation setTheme={setDarkMode} />
         </Router>
       </Box>
     </ThemeProvider>

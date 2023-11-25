@@ -7,6 +7,7 @@ export default function SignUp({ setValue }) {
         display: "flex",
         width: "100%",
         height: "100%",
+        mt: "-33px",
         flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -15,7 +16,10 @@ export default function SignUp({ setValue }) {
       <Typography
         color="primary.main"
         fontWeight="bolder"
-        sx={{ fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem", lg: "2.8rem" } }}
+        sx={{
+          fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem", lg: "2.8rem" },
+          my: "25px",
+        }}
       >
         Sign Up
       </Typography>
@@ -30,15 +34,15 @@ export default function SignUp({ setValue }) {
           gap: "30px",
         }}
       >
-        <TextField id="name" autoComplete="true" fullWidth variant="filled" label="name" autoFocus />
         <TextField
-          id="email"
+          id="name"
           autoComplete="true"
           fullWidth
           variant="filled"
-          label="email"
-         
+          label="name"
+          autoFocus
         />
+        <TextField id="email" autoComplete="true" fullWidth variant="filled" label="email" />
         <TextField id="password" autoComplete="true" fullWidth variant="filled" label="password" />
       </Box>
       <Box
@@ -47,12 +51,12 @@ export default function SignUp({ setValue }) {
           color: "primary.main",
         }}
       >
-        <Button variant="contained" fullWidth>
+        <Button variant="contained" fullWidth sx={{ my: "30px" }}>
           Sign Up
         </Button>
       </Box>
       <Box display="flex" gap="5px">
-        <Typography color="contrast.reverse">
+        <Typography color="contrast.reverse" sx={{my:'15px'}}>
           Already have an account ? &nbsp;&nbsp;&nbsp;
           <Typography
             component="span"

@@ -23,38 +23,42 @@ export default function Login() {
 
   return (
     <motion.div
+      className="jjjjjjjjjjjjjjjjjjjjj"
       initial={{ opacity: 0, translateY: -50 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.5 }}
     >
       <Box
+        className="hhhhhhhhhhhhhhhhhh"
         sx={{
-          mt: "100px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: `${window.innerHeight - 150}px`,
           width: "100%",
+          height: "100%",
         }}
       >
         <form
+          className="iiiiiiiiiiiiiiiiiiiii"
           style={{
+            height: window.innerWidth > 600 ? "85vh" : window.innerWidth > 400 ? "80vh" : "50vh",
             width: "100%",
-            height: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            marginTop: window.innerWidth > 400 ? "80px" : "10px",
           }}
         >
           <Paper
             elevation={15}
             sx={{
-              width: { xs: "90%", sm: "65%", md: "45%", lg: "40%", xl: "35%" },
-              height: { xs: "70%", sm: "80%", md: "80%", lg: "90%", xl: "100%" },
+              width: { xs: "90%", sm: "70%", md: "55%", lg: "40%", xl: "35%" },
+              height: "100%",
               display: "flex",
               justifyContent: "space-evenly",
               flexDirection: "column",
               alignItems: "center",
+              px: "14px",
             }}
           >
             <Box sx={{ width: "100%", height: "100%" }}>
@@ -69,8 +73,16 @@ export default function Login() {
                 }}
               >
                 <Tabs value={value} onChange={handleChange} aria-label="form">
-                  <Tab label="Sign in" {...a11yProps(0)} sx={{ mx: "50px" }} />
-                  <Tab label="Sign up" {...a11yProps(1)} sx={{ mx: "50px" }} />
+                  <Tab
+                    label="Sign in"
+                    {...a11yProps(0)}
+                    sx={{ mx: { xs: "15px", sm: "25px", md: "35px", lg: "45px", xl: "55px" } }}
+                  />
+                  <Tab
+                    label="Sign up"
+                    {...a11yProps(1)}
+                    sx={{ mx: { xs: "15px", sm: "25px", md: "35px", lg: "45px", xl: "55px" } }}
+                  />
                 </Tabs>
               </Box>
               <CustomTabPanel value={value} index={0}>

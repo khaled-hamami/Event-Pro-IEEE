@@ -17,7 +17,7 @@ export default function SignIn({ setValue }) {
       <Typography
         color="primary.main"
         fontWeight="bolder"
-        sx={{ fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem", lg: "2.8rem" } }}
+        sx={{ fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem", lg: "2.8rem" }, my: "15px" }}
       >
         Sign in
       </Typography>
@@ -54,7 +54,7 @@ export default function SignIn({ setValue }) {
           width: { xs: "80%", sm: "70%", md: "60%" },
         }}
       >
-        <Button variant="contained" fullWidth>
+        <Button variant="contained" fullWidth sx={{my:'15px'}}>
           Sign In
         </Button>
       </Box>
@@ -82,12 +82,13 @@ export default function SignIn({ setValue }) {
             color: "primary.main",
             cursor: "pointer",
             "&:hover": { color: "primary.dark", textDecoration: "underline" },
+            my: "15px",
           }}
         >
           Mot de passe oublié ?
         </Typography>
       </Box>
-      <Button variant="outlined" sx={{ px: "40px" }} onClick={() => navigate("/admin")}>
+      <Button variant="outlined" sx={{ px: "40px", mb: "15px" }} onClick={() => navigate("/admin")}>
         Admin
       </Button>
     </Box>

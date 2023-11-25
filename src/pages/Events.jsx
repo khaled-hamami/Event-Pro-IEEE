@@ -6,10 +6,12 @@ import fourthImage from "../assets/Images/4.jpg"
 import fithImage from "../assets/Images/5.jpg"
 import sixthImage from "../assets/Images/6.jpg"
 import { motion } from "framer-motion"
-import { Box, Fab, Popover } from "@mui/material"
+import { Box, Fab, Popover, Typography } from "@mui/material"
 import { useInView } from "react-intersection-observer"
 import { useEffect, useState } from "react"
 import AddIcon from "@mui/icons-material/Add"
+import { signal } from "@preact/signals-react"
+
 export default function Events() {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -29,8 +31,6 @@ export default function Events() {
       visible: { opacity: 1, translateX: 0 },
     }
 
-    // const open = Boolean(anchorEl)
-    // const id = open ? "simple-popover" : undefined
     return (
       <motion.div
         ref={innerRef}
@@ -52,7 +52,7 @@ export default function Events() {
       title: "inegration day",
       description: "this is the first thing we do each year to get to know each other",
       trainers: ["khaled", "mohamed", "amin"],
-      image: firstImage,
+      images: [firstImage, fithImage],
       date: new Date(Date.now()),
       time: { startHour: "7:00", endHour: "10:30" },
       location: "mrezgua",
@@ -69,7 +69,7 @@ export default function Events() {
       title: "tasks management",
       description: " we must give each one his/her task",
       trainers: ["ahmed", "ali"],
-      image: secondImage,
+      images: [secondImage],
       date: new Date(Date.now()),
       time: { startHour: "14:00", endHour: "18:00" },
       location: "nabeul",
@@ -86,7 +86,7 @@ export default function Events() {
       title: "Renuion",
       description: "gather up to discust some things",
       trainers: ["houssem", "sahar"],
-      image: thirdImage,
+      images: [thirdImage],
       date: new Date(Date.now()),
       time: { startHour: "14:00", endHour: "18:00" },
       location: "nabeul",
@@ -103,7 +103,7 @@ export default function Events() {
       title: "formation",
       description: "we have a formation about react",
       trainers: ["asma"],
-      image: fourthImage,
+      images: [fourthImage],
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
       location: "iset",
@@ -120,7 +120,7 @@ export default function Events() {
       title: "recruitment",
       description: "we have a formation about react",
       trainers: ["asma"],
-      image: fithImage,
+      images: [fithImage],
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
       location: "library",
@@ -137,7 +137,7 @@ export default function Events() {
       title: "discussion",
       description: "we have a formation about react",
       trainers: ["naser", "amel"],
-      image: sixthImage,
+      images: [sixthImage, firstImage, thirdImage],
       date: new Date(Date.now()),
       time: { startHour: "18:00", endHour: "20:00" },
       location: "caffé",
@@ -176,32 +176,17 @@ export default function Events() {
           </AnimatedEventBlock>
         ))}
       </Box>
-      {/* <Box on sx={{ "& > :not(style)": { m: 5 }, position: "fixed", bottom: 0, right: 0 }}>
-        <Fab color="primary" aria-label="add">
+      <Box sx={{ "& > :not(style)": { m: 5 }, position: "fixed", bottom: 0, right: 0 }}>
+        <Fab
+          id="addIconButton"
+          aria-haspopup="true"
+          color="primary"
+          aria-label="add"
+          title="Add Event"
+        >
           <AddIcon />
         </Fab>
-        <Popover
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-          >
-          <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-        </Popover> */}
-      {/* </Box> */}
+      </Box>
     </>
   )
-}
-
-const handleClick = (event) => {
-  setAnchorEl(event.currentTarget)
-}
-
-const handleClose = () => {
-  setAnchorEl(null)
-  const [anchorEl, setAnchorEl] = useState(null)
 }
