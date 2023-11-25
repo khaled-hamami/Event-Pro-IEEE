@@ -71,7 +71,7 @@ export default function Navbar({ setTheme }) {
         ABOUT
       </CustomNavLink>
       <div onClick={() => setTheme((prev) => !prev)}>
-        <ThemeSwitcher id="themeSwitcher" title="toogle theme" />
+        <ThemeSwitcher  id="themeSwitcher" title="toogle theme"  />
       </div>
     </AppBar>
   )

@@ -92,25 +92,27 @@ export default function Event({ event }) {
         {event.images.length > 1 && (
           <>
             <IconButton
-              size="small"
+              size="large"
               onClick={() => switchImage(-1)}
               sx={{
                 alignSelf: "center",
                 color: "primary.main",
-                backgroundColor: "#f8f8f8",
-                "&:hover": { backgroundColor: "rgba(255,255,255,.5)" },
+                backgroundColor: "rgba(255,255,255,.5)",
+                "&:hover": { backgroundColor: "rgba(255,255,255,.7)" },
+                mx: "10px",
               }}
             >
               <NavigateBeforeIcon />
             </IconButton>
             <IconButton
-              size="small"
+              size="large"
               onClick={() => switchImage(1)}
               sx={{
                 alignSelf: "center",
                 color: "primary.main",
-                backgroundColor: "#f8f8f8",
-                "&:hover": { backgroundColor: "rgba(255,255,255,.5)" },
+                backgroundColor: "rgba(255,255,255,.5)",
+                "&:hover": { backgroundColor: "rgba(255,255,255,.7)" },
+                mx: "10px",
               }}
             >
               <NavigateNextIcon />

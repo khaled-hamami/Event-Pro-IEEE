@@ -6,11 +6,10 @@ import fourthImage from "../assets/Images/4.jpg"
 import fithImage from "../assets/Images/5.jpg"
 import sixthImage from "../assets/Images/6.jpg"
 import { motion } from "framer-motion"
-import { Box, Fab, Popover, Typography } from "@mui/material"
+import { Box, Fab } from "@mui/material"
 import { useInView } from "react-intersection-observer"
 import { useEffect, useState } from "react"
 import AddIcon from "@mui/icons-material/Add"
-import { signal } from "@preact/signals-react"
 
 export default function Events() {
   useEffect(() => {
