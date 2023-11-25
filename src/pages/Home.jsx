@@ -1,5 +1,5 @@
-import LogoImage from "../assets/Images/Home.png"
-import background from "../assets/Images/background.jpg"
+import LogoImage from "../assets/Images/Home.webp"
+import background from "../assets/Images/background.webp"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useEffect, useState } from "react"

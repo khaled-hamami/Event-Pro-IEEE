@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import { AppBar, Button, Switch, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
 import { useNavigate } from "react-router"
-import IEEElogo from "../assets/Images/IEEElogo.png"
+import IEEElogo from "../assets/Images/IEEElogo.webp"
 import { useTheme } from "@emotion/react"
 import { useEffect, useState } from "react"
 import("../styles/index.css")

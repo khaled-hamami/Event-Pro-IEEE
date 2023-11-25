@@ -1,17 +1,18 @@
 import { Box } from "@mui/material"
-import { useState } from "react"
+import React, { useState } from "react"
 import { ThemeProvider } from "@emotion/react"
 import { darkTheme, lightTheme } from "./config/theme"
 import { Routes, Route } from "react-router"
 import { BrowserRouter as Router } from "react-router-dom"
-import Home from "./pages/Home"
 import Navbar from "./components/Navbar"
-import Events from "./pages/Events"
-import About from "./pages/About"
-import Admin from "./pages/Admin"
-import Error from "./pages/Error"
-import Login from "./pages/Login"
 import BottomNavigation from "./components/MobileNav"
+import Home from "./pages/Home"
+import Loader from "./components/Loader"
+import Admin from "./pages/Admin"
+const Events = React.lazy(() => import("./pages/Events"))
+const About = React.lazy(() => import("./pages/About"))
+const Login = React.lazy(() => import("./pages/Login"))
+const Error = React.lazy(() => import("./pages/Error"))
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   return (
@@ -28,12 +29,48 @@ function App() {
         <Router>
           <Navbar setTheme={setDarkMode} />
           <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/events" Component={Events} />
-            <Route path="/login" Component={Login} />
-            <Route path="/about" Component={About} />
-            <Route path="/admin" Component={Admin} />
-            <Route path="/*" Component={<Error />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/events"
+              element={
+                <React.Suspense fallback={<Loader />}>
+                  <Events />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <React.Suspense fallback={<Loader />}>
+                  <Login />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <React.Suspense fallback={<Loader />}>
+                  <About />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <React.Suspense fallback={<Loader />}>
+                  <Admin />
+                </React.Suspense>
+              }
+            />
+
+            <Route
+              path="/*"
+              element={
+                <React.Suspense fallback={<Loader />}>
+                  <Error />
+                </React.Suspense>
+              }
+            />
           </Routes>
           <BottomNavigation setTheme={setDarkMode} />
         </Router>

@@ -23,23 +23,21 @@ export default function Login() {
 
   return (
     <motion.div
-      className="jjjjjjjjjjjjjjjjjjjjj"
       initial={{ opacity: 0, translateY: -50 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.5 }}
     >
       <Box
-        className="hhhhhhhhhhhhhhhhhh"
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
           height: "100%",
+          mt: { xs: "50px", sm: "none" },
         }}
       >
         <form
-          className="iiiiiiiiiiiiiiiiiiiii"
           style={{
             height: window.innerWidth > 600 ? "calc(520px + 20svh)" : "calc(450px + 15svh)",
             width: "100%",
@@ -52,7 +50,7 @@ export default function Login() {
           <Paper
             elevation={15}
             sx={{
-              width: { xs: "90%", sm: "70%", md: "55%", lg: "40%", xl: "35%" },
+              width: { xs: "90%", sm: "70%", md: "55%", lg: "40%", xl: "30%" },
               height: "100%",
               display: "flex",
               justifyContent: "space-evenly",
